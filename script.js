@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add event listener for Enter key
     userInput.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
+        if (event.key === 'Enter' && userInput.value.trim() !== "") {
             event.preventDefault();  // Prevent form submission if inside a form
             sendBtn.click();         // Trigger the send button click
         }
