@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded",() => {
 const chatbox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
@@ -37,3 +38,4 @@ function respond(input) {
         addmessage(reply, 'bot');
     }, 500);
 }
+});
