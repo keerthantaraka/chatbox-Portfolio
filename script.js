@@ -47,3 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 500);
     }
 });
+function generateBotResponse(userMessage) {
+    fetch("http://localhost:8080/api/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "text/plain"
+        },
+        body: userMessage
+    })
+    .then(response => response.text())
+    .then(botMessage => {
+        addMessage("Bot", botMessage);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        addMessage("Bot", "Sorry, something went wrong.");
+    });
+}
