@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function generateBotResponse(userMessage) {
-        fetch("http://localhost:3036/api/chat", {
+        fetch("http://localhost:8080/api/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "text/plain"
