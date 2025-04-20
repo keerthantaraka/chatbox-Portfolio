@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     sendBtn.addEventListener('click', () => {
         const message = userInput.value.trim();
         if (message) {
-            addMessage("You", message);
+            addmessage(message, 'user');
             generateBotResponse(message);
             userInput.value = '';
         }
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(response => response.text())
         .then(botMessage => {
-            addMessage("Bot", botMessage);
+            addMessage("Bot", botMessage); // <-- this line fixed
         })
         .catch(error => {
             console.error("Error:", error);
