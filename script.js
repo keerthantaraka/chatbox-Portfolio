@@ -24,6 +24,13 @@ sendBtn.addEventListener('click', () => {
     }
 });
 
+userInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent form submission if inside a form
+        sendBtn.click();         // Trigger the send button click
+    }
+});
+
 function addmessage(text, type) {
     const msg = document.createElement('div');
     msg.className = `message ${type}`; // Fixed here
